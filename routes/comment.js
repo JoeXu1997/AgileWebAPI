@@ -14,9 +14,16 @@ db.on('error', function (err) {
 db.once('open', function () {
     console.log('Successfully Connected to [ ' + db.name + ' ]');
 });
-router.getCommentByMovieName = (req,res)=>{
-    res.setHeader('Content-Type', 'application/json');
 
+router.getCommentByMovieName = (req,res)=>{ // comment/movie?moviename=Inception
+    res.setHeader('Content-Type', 'application/json');//query 不行？
+    console.log(req.query.name);
+    Comment.find({"commentfor":req.params.commentfor},function (err,comments) {
+        if (err)
+            res.send(err);
+
+        res.send(JSON.stringify(comments,null,5));
+    })
 };
 router.getcomments = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
