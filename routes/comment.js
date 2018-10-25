@@ -17,7 +17,6 @@ db.once('open', function () {
 
 router.getCommentByMovieName = (req,res)=>{ // comment/movie?moviename=Inception
     res.setHeader('Content-Type', 'application/json');//query 不行？
-    console.log(req.query.name);
     Comment.find({"commentfor":req.params.commentfor},function (err,comments) {
         if (err)
             res.send(err);
@@ -25,6 +24,7 @@ router.getCommentByMovieName = (req,res)=>{ // comment/movie?moviename=Inception
         res.send(JSON.stringify(comments,null,5));
     })
 };
+
 router.getcomments = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 

@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 var Movie = require('../models/movies');
+var User = require('../models/users');
 // mongoose.connect('mongodb://localhost:27017/moviedb');
 
 var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';//necessary
@@ -18,23 +19,25 @@ db.once('open', function () {
 
 router.addMovie = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    var movie = new Movie();
-    movie.name = req.body.name;
-    movie.movietype = req.body.movietype;
-    movie.Directedby = req.body.Directedby;
-    movie.mainActor = req.body.mainActor;
+    User.findOne({"username":req.body.operator},function (err,user) {
+        console.log(user.usertype)
+        if(user.usertype ==="admin"){
+            var movie = new Movie();
+            movie.name = req.body.name;
+            movie.movietype = req.body.movietype;
+            movie.Directedby = req.body.Directedby;
+            movie.mainActor = req.body.mainActor;
 
-    movie.save(function(err) {
-        if (err)
-            res.json({ message: 'Movie Add Failed!', errmsg : err });
-        else
-            res.json({ message: 'Movie Add Successful!',data:movie});
+            movie.save(function(err) {
+                if (err)
+                    res.json({ message: 'Movie Add Failed!', errmsg : err });
+                else
+                    res.json({ message: 'Movie Add Successful!',data:movie});
+            });
+        }else
+            res.send({message:"You donnot have this authority"})
     });
-}
-// function getByValue(array, id) {
-//     var result  = array.filter(function(obj){return obj.id == id;} );
-//     return result ? result[0] : null; // or undefined
-// }
+};
 router.getMoviesByType = (req, res) => {
 
     res.setHeader('Content-Type', 'application/json');
@@ -61,19 +64,6 @@ router.getMoviesByActor = (req, res) => {         //reference http://www.w3schoo
             res.send(JSON.stringify(movie,null,5));
         }
     });
-
-   //  var keyword = req.params.mainActor; //从URL中传来的 keyword参数
-   //  var reg = new RegExp(keyword, 'i');
-   //  console.log(reg);
-   // // var whereStr = {'mainActor':{$regex:reg}};
-   //  Movie.findByName(reg,function(err, movie) {
-   //      if (err){
-   //          res.send({ message: 'No Such Movies!', errmsg : err });
-   //      }
-   //      else{
-   //          res.send(JSON.stringify(movie,null,5));
-   //      }
-   //  });
 };
 router.getMoviesByDirector = (req, res) => {
 
@@ -104,29 +94,44 @@ router.rankformovies = (req, res) => {
     });
 };
 router.removeMovie = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if(user.usertype==="admin"){
+            Movie.findByIdAndRemove(req.params.id, function(err) {
+                if (err)
+                    res.json({message:"Delete Failed",errmsg:err})
+                else
+                    res.json({message:"Delete Successful"})
+            });
+        }else
+            res.send({message:"You donot have this authority"})
+    })
 
-    Movie.findByIdAndRemove(req.params.id, function(err) {
-        if (err)
-            res.json({message:"Delete Failed",errmsg:err})
-        else
-            res.json({message:"Delete Successful"})
-    });
 }
 router.upvote = (req, res) => {
-
-    Movie.findById(req.params.id, function(err,movie) {
-        if (err)
-            res.json({message:"Upvote Not Found",errmsg:err});
-        else {
-            movie.upvotes += 1;
-            movie.save(function (err) {
+    res.setHeader('Content-Type', 'application/json');
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if(user.actions.upvotefor===""){
+            Movie.findById(req.params.id, function(err,movie) {
                 if (err)
-                    res.json({message:"Upvote failed",errmsg:err});
-                else
-                    res.json({message:"Upvote Successful",data:movie});
+                    res.json({message:"Upvote Not Found",errmsg:err});
+                else {
+                    movie.upvotes += 1;
+                    user.actions.upvotefor=movie.name;
+                    user.save();
+                    movie.save(function (err) {
+                        if (err)
+                            res.json({message:"Upvote failed",errmsg:err});
+                        else
+                            res.json({message:"Upvote Successful",data:movie});
+                    });
+
+                }
             });
-        }
-    });
+        }else
+            res.send({message:"Each user could only vote for one movie"})
+    })
+
 }
 
 // router.upvote = (req, res) =>{

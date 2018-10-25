@@ -36,16 +36,18 @@ app.get('/movies/actor/:mainActor',movies.getMoviesByActor);//fuzzy?
 app.get('/movies/director/:Directedby',movies.getMoviesByDirector);// params or query?
 //app.get('/movies/comments/:name',movies.getMovieComments)
 //router for users
-
-app.get('/usr',users.getusers);                     //mlab  deploy hidepw
+app.get('/usr/myself',users.getMy);
+app.get('/usr',users.getusers);
 app.get('/usr/upvote/:upvotefor',users.getUserWithUpvotefor);
 app.get('/usr/comment/:commentfor',users.getUserWithCommentfor);
 app.post('/usr',users.addUser);
 app.put('/usr/pw',users.changepw);
 app.delete('/usr/:id',users.removeOneUser);
+app.put('/usr/vote',users.addUpvote);
 //router for comments
 app.get('/comment/one/:id',comment.getOneComment)
 app.get('/comment',comment.getcomments);
+app.get('/comment/movie/:commentfor',comment.getCommentByMovieName)
 app.get('/comment/:username',comment.getUserComment);
 app.put('/comment/:id',comment.editComment);
 app.delete('/comment/:id',comment.removeComment);

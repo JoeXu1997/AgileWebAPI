@@ -19,7 +19,7 @@ let MovieSchema = new mongoose.Schema({        //  add movie description and com
         mainActor: String,
         upvotes: {type: Number, default: 0}
     },
-    { collection: 'moviedb' });
+    { collection: 'movie' });
 
 // MovieDAO.prototype.findByName = function(query, callback) {
 //     Movie.findOne(query, function(err, obj){

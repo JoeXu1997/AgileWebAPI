@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "5bd1c916f6bf492830ff24ec",
+    "date": "2018-10-25T13:45:58.212Z",
+    "username": "xu",
+    "commentfor": "Inception",
+    "content": "Nice film",
+    "__v": 0
+  },
+  {
+    "_id": "5bd1c925f6bf492830ff24ed",
+    "date": "2018-10-25T13:46:13.063Z",
+    "username": "xu",
+    "commentfor": "Inception",
+    "content": "Nice film",
+    "__v": 0
+  }
+]

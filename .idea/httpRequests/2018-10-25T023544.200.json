@@ -1,0 +1,11 @@
+{
+  "message": "Delete Successful",
+  "data": {
+    "_id": "5bca0a6be373bc0323e27b8e",
+    "date": "2018-10-19T16:46:35.935Z",
+    "username": "joe",
+    "commentfor": "Inception",
+    "content": "Nice film",
+    "__v": 0
+  }
+}

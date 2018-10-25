@@ -2,6 +2,8 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 var User = require('../models/users');
+var Movie = require('../models/movies')
+var flag  ;
 var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';    //necessary
 mongoose.connect(mongodbUri);
 //mongoose.connect('mongodb://localhost:27017/moviedb');
@@ -13,29 +15,59 @@ db.on('error', function (err) {
 db.once('open', function () {
     console.log('Successfully Connected to [ ' + db.name + ' ]');
 });
-
 /* GET users listing. */
 router.getusers = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if(user.usertype==="admin"){
+            User.find(function(err, users) {
+                if (err){
+                    res.send(err);
+                }else
+                    res.send(JSON.stringify(users, null, 5));
 
-    User.find(function(err, users) {
-        if (err)
+            });
+        } else
+            res.send({message:"You donnot have right to do this operation!"})
+    })
+};
+router.getMy=(req,res)=>{
+    res.setHeader('Content-Type', 'application/json');
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if (err){
             res.send(err);
-
-        res.send(JSON.stringify(users,null,5));
-    });
+        }else
+            res.send(JSON.stringify(user, null, 5));
+    })
 };
 router.getUserWithUpvotefor = (req,res) => {
     res.setHeader('Content-Type', 'application/json');
-    console.log(req.params.upvotefor);
-    User.findOne({ "actions.upvotefor" : req.params.upvotefor },function(err, user) {
+    User.find({ "actions.upvotefor" : req.params.upvotefor },function(err, user) {
         if (err)
             res.send({ message: 'No Users Vote for this Movie!', errmsg : err });
         else
             res.send(JSON.stringify(user,null,5));
     });
-
 };
+router.addUpvote = (req,res)=>{//{"operator":"","votefor":"Roman Holiday"}
+    res.setHeader('Content-Type', 'application/json');
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if(user.actions.upvotefor===""){
+            user.actions.upvotefor=req.body.votefor;
+            user.save(function(err) {
+                if (err)
+                    res.json({ message: 'Vote Failed!', errmsg : err });
+                else
+                    res.json({ message: 'Votr Successful!',data:user});
+            });
+            Movie.findOne({"name":req.body.votefor},function (err,movie) {
+                movie.upvotes+=1;
+                movie.save();
+            })
+        }else
+            res.send({message:"Each user could vote for only one movie"})
+    })
+}
 router.getUserWithCommentfor = (req,res) =>{
     res.setHeader('Content-Type', 'application/json');
 
@@ -47,11 +79,11 @@ router.getUserWithCommentfor = (req,res) =>{
     });
 };
 router.changepw = (req,res) =>{
-    User.findOne({"username":req.body.username}, function(err,user) {//{username:xx,newpassword:xxx}
+    User.findOne({"username":req.body.operator,"password":req.body.password}, function(err,user) {//{operator:xx,password:xx,newpassword:xxx}
         if (err)
             res.json({message:"User Not Found",errmsg:err});
         else {
-            user.password = req.body.password;
+            user.password = req.body.newpassword;
             user.save(function (err) {
                 if (err)
                     res.json({message:"Change failed",errmsg:err});
@@ -62,30 +94,33 @@ router.changepw = (req,res) =>{
     });
 };
 
-router.removeOneUser = (req,res) =>{
-    User.findByIdAndRemove(req.params.id, function(err) {
-        if (err)
-            res.json({message:"Delete Failed",errmsg:err})
-        else
-            res.json({message:"Delete Successful"})
+router.removeOneUser = (req,res) =>{    //{"operatot":xx}
+
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if(user.usertype==="admin"){
+            User.findByIdAndRemove(req.params.id, function (err) {
+                if (err)
+                    res.json({message: "Delete Failed", errmsg: err})
+                else
+                    res.json({message: "Delete Successful"})
+            });
+        }else
+            res.send({message:"You donnot have this authority"})
     });
 };
 
-//{"username": "joe",    "password": "joe123",    "actions": {       "upvotefor": "Roman Holiday",       "comment":{         "commentfor":["Roman Holiday"],        "content":["great romance movie"]     }   } }
+//{"operator":xx,"username": "joe",    "password": "joe123",    "actions": {       "upvotefor": "Roman Holiday",       "comment":{         "commentfor":["Roman Holiday"],        "content":["great romance movie"]     }   } }
 router.addUser = (req,res)=>{
-    res.setHeader('Content-Type', 'application/json');
     var user = new User();
     user.username = req.body.username;
     user.password = req.body.password;
-    user.actions.upvotefor = req.body.actions.upvotefor;
-    user.actions.comment.commentfor = req.body.actions.comment.commentfor;
-    user.actions.comment.content = req.body.actions.comment.content;
+    user.usertype = req.body.usertype;
 
     user.save(function(err) {
         if (err)
-            res.json({ message: 'Movie Add Failed!', errmsg : err });
+            res.json({ message: 'User Add Failed!', errmsg : err });
         else
-            res.json({ message: 'Movie Add Successful!',data:user});
+            res.json({ message: 'User Add Successful!',data:user});
     });
 };
 

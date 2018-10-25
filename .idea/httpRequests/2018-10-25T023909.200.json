@@ -1,0 +1,22 @@
+{
+  "message": "User Add Failed!",
+  "errmsg": {
+    "errors": {
+      "username": {
+        "message": "Path `username` is required.",
+        "name": "ValidatorError",
+        "properties": {
+          "message": "Path `username` is required.",
+          "type": "required",
+          "path": "username"
+        },
+        "kind": "required",
+        "path": "username",
+        "$isValidatorError": true
+      }
+    },
+    "_message": "User validation failed",
+    "message": "User validation failed: username: Path `username` is required.",
+    "name": "ValidationError"
+  }
+}

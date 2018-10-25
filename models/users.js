@@ -13,19 +13,27 @@ var bcrypt = require('bcrypt');
 //     }
 // })
 let UserSchema = new mongoose.Schema({
-        username: String,
-        password: String,
+        username: {
+            type: String,
+            unique: true,
+            required: true,
+            trim: true
+        },
+        password: {
+            type: String,
+            required: true,
+        },
         usertype: String,
         actions:{
             upvotefor:{type:String,default:""},
             comment:{
-                commentfor:[],         //default: new Array()
+                commentfor:[],
                 content:[]
             }
         }
     },
-    { collection: 'userdb' });
-UserSchema.pre('save', function (next) {
+    { collection: 'user' });
+UserSchema.pre('save', function (next) {//ref：https://medium.com/createdd-notes/starting-with-authentication-a-tutorial-with-node-js-and-mongodb-25d524ca0359
     var user = this;
     bcrypt.hash(user.password, 10, function (err, hash){
         if (err) {
