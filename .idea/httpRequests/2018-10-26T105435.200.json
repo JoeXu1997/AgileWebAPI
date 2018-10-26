@@ -1,0 +1,20 @@
+[
+  {
+    "upvotes": 1,
+    "_id": "5bd1c81795c89a281c25c90d",
+    "name": "Inception",
+    "movietype": "ScienceFiction",
+    "Directedby": "Christopher Nolan",
+    "mainActor": "Leonardo DiCaprio",
+    "__v": 0
+  },
+  {
+    "upvotes": 0,
+    "_id": "5bd2df6f00b1772bedcb0027",
+    "name": "Dangal",
+    "movietype": "Sports",
+    "Directedby": "Nitesh Tiwari",
+    "mainActor": "Aamir Khan",
+    "__v": 0
+  }
+]

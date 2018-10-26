@@ -79,17 +79,12 @@ router.getUserWithCommentfor = (req,res) =>{
     });
 };
 router.changepw = (req,res) =>{
-    User.findOne({"username":req.body.operator,"password":req.body.password}, function(err,user) {//{operator:xx,password:xx,newpassword:xxx}
+    User.update({"username":req.body.operator,"password":req.body.password},{"password":req.body.newpw}, function(err,user) {//{operator:xx,password:xx,newpassword:xxx}
         if (err)
             res.json({message:"User Not Found",errmsg:err});
         else {
-            user.password = req.body.newpassword;
-            user.save(function (err) {
-                if (err)
-                    res.json({message:"Change failed",errmsg:err});
-                else
-                    res.json({message:"Change Successful",data:user});
-            });
+            res.json({message:"Change Successful",data:user});
+
         }
     });
 };

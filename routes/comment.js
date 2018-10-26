@@ -64,11 +64,14 @@ router.editComment=(req,res)=>{//params + body  {"content":"new content","commen
     var newcontent = req.body.content;            //想要的新评论
     var newcommentfor = req.body.commentfor;
 
-    Comment.findByIdAndUpdate(req.params.id,{"commentfor":newcommentfor,"content":newcontent},function (err,comment) {
+    Comment.findById(req.params.id,function (err,comment) {
         if (err)
             res.json({message:"Update failed",errmsg:err});
         else{
             editUsrComment(comment.username,comment.commentfor,comment.content,newcommentfor,newcontent);
+            comment.commentfor=newcommentfor;
+            comment.content=newcontent;
+            comment.save();
             res.json({message:"Update Successful",data:comment});
         }
     });

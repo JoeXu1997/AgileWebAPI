@@ -1,0 +1,17 @@
+{
+  "message": "User Add Successful!",
+  "data": {
+    "actions": {
+      "comment": {
+        "commentfor": [],
+        "content": []
+      },
+      "upvotefor": ""
+    },
+    "_id": "5bd2e2f3c33e2f2c41009b0e",
+    "username": "yue",
+    "password": "$2b$10$MmV3E8JT8bxdGfwrxdZtiOFRT8CFIQM9SO1c0agkLT2.y9n3sZWCS",
+    "usertype": "common",
+    "__v": 0
+  }
+}

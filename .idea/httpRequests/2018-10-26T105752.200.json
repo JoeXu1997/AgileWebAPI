@@ -1,0 +1,16 @@
+[
+  {
+    "actions": {
+      "comment": {
+        "commentfor": [],
+        "content": []
+      },
+      "upvotefor": "Inception"
+    },
+    "_id": "5bd2e2f3c33e2f2c41009b0e",
+    "username": "yue",
+    "password": "$2b$10$n715myPmDAg4Z7Be3l8nbOFhAdWmNh3ZIJDPRy6GC7.V5JuxZymh6",
+    "usertype": "common",
+    "__v": 0
+  }
+]

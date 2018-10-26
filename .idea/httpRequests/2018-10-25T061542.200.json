@@ -1,0 +1,24 @@
+[
+  {
+    "actions": {
+      "comment": {
+        "commentfor": [
+          "Inception",
+          "Roman Holiday",
+          "Roman Holiday"
+        ],
+        "content": [
+          "Nice film",
+          "Nice film",
+          "Nicehahahfilm"
+        ]
+      },
+      "upvotefor": ""
+    },
+    "_id": "5bd1c78c95c89a281c25c90c",
+    "username": "xu",
+    "password": "$2b$10$d.x5rFBFjPmScst4GRRDKeiExKCljQmKDtfSBPJRfrBD5EvUljpbu",
+    "usertype": "admin",
+    "__v": 8
+  }
+]
