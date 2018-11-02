@@ -1,0 +1,22 @@
+[
+  {
+    "actions": {
+      "comment": {
+        "commentfor": [
+          "Inception",
+          "The Shining"
+        ],
+        "content": [
+          "Nice film",
+          "Nice film"
+        ]
+      },
+      "upvotefor": ""
+    },
+    "_id": "5bd32a0b550c1d05341dd949",
+    "username": "xu",
+    "password": "$2b$10$cJCpl0Oc0tEmCXQmu5u9L.Ex1tRRlM97WQY0daGTbf0/PMFj.phkO",
+    "usertype": "admin",
+    "__v": 2
+  }
+]

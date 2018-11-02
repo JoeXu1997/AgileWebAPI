@@ -1,0 +1,29 @@
+[
+  {
+    "upvotes": 1,
+    "_id": "5bd323cbb51534045f7a6913",
+    "name": "Inception",
+    "movietype": "ScienceFiction",
+    "Directedby": "Christopher Nolan",
+    "mainActor": "Leonardo DiCaprio",
+    "__v": 0
+  },
+  {
+    "upvotes": 0,
+    "_id": "5bd323b2b51534045f7a6912",
+    "name": "The Shining",
+    "movietype": "Horror",
+    "Directedby": "Stanley Kubrick",
+    "mainActor": "Jack Nicholson",
+    "__v": 0
+  },
+  {
+    "upvotes": 0,
+    "_id": "5bd3242cb51534045f7a6916",
+    "name": "test",
+    "movietype": "ScienceFiction",
+    "Directedby": "me Nolan",
+    "mainActor": "Leonardo me",
+    "__v": 0
+  }
+]

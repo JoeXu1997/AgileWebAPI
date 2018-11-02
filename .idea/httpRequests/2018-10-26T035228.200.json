@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5bd32a2c550c1d05341dd94b",
+    "name": "The Shining",
+    "movietype": "Horror",
+    "Directedby": "Stanley Kubrick",
+    "mainActor": "Jack Nicholson",
+    "__v": 0
+  }
+}

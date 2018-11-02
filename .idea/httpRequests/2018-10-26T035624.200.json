@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5bd32a73550c1d05341dd94e",
+    "date": "2018-10-26T14:53:39.198Z",
+    "username": "yue",
+    "commentfor": "Inception",
+    "content": "Nice film",
+    "__v": 0
+  },
+  {
+    "_id": "5bd32a81550c1d05341dd94f",
+    "date": "2018-10-26T14:53:53.190Z",
+    "username": "xu",
+    "commentfor": "Inception",
+    "content": "Nice film",
+    "__v": 0
+  },
+  {
+    "_id": "5bd32a8c550c1d05341dd950",
+    "date": "2018-10-26T14:54:04.951Z",
+    "username": "xu",
+    "commentfor": "The Shining",
+    "content": "Nice film",
+    "__v": 0
+  }
+]

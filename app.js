@@ -47,7 +47,7 @@ app.put('/usr/vote',users.addUpvote);
 //router for comments
 app.get('/comment/one/:id',comment.getOneComment)
 app.get('/comment',comment.getcomments);
-app.get('/comment/movie/:commentfor',comment.getCommentByMovieName)
+app.get('/comment/movie/:commentfor',comment.getCommentByMovieName);
 app.get('/comment/:username',comment.getUserComment);
 app.put('/comment/:id',comment.editComment);
 app.delete('/comment/:id',comment.removeComment);

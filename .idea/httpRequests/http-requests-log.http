@@ -1,91 +1,22 @@
-GET http://localhost:3000/usr
+GET http://localhost:3000/usr/
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu"}
+{"operator":"xu","content":"new content","commentfor":"Inception"}
 
-<> 2018-10-26T115216.200.json
+<> 2018-10-26T040101.200.json
 
 ###
 
-GET http://localhost:3000/usr/myself
+DELETE http://localhost:3000/usr/5bd32a17550c1d05341dd94a
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"test","password":"123456","newpw":"test"}
+{"operator":"xu","content":"new content","commentfor":"Inception"}
 
-<> 2018-10-26T110630.200.json
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"test","password":"123456","newpw":"test"}
-
-<> 2018-10-26T110609.200.json
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"test","password":"123456","new":"test"}
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"test","password":"123456","newpassword":"test"}
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"test","password":"123456","newpassword":"test"}
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"test","password":"123456","newpassword":"test"}
-
-###
-
-GET http://localhost:3000/usr/upvote/Inception
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu"}
-
-<> 2018-10-26T105752.200.json
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu"}
-
-<> 2018-10-26T105727.200.json
+<> 2018-10-26T040056.200.json
 
 ###
 
@@ -94,20 +25,53 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu"}
+{"operator":"xu","content":"new content","commentfor":"Inception"}
 
-<> 2018-10-26T105701.200.json
+<> 2018-10-26T040045.200.json
 
 ###
 
-POST http://localhost:3000/usr
+GET http://localhost:3000/movies/
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"username":"test","password":"123456","usertype":"common"}
+{"operator":"xu","content":"new content","commentfor":"Inception"}
 
-<> 2018-10-26T105631.200.json
+<> 2018-10-26T040032.200.json
+
+###
+
+DELETE http://localhost:3000/movies/5bd32a51550c1d05341dd94d
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T040028.200.json
+
+###
+
+GET http://localhost:3000/movies/director/Nolan
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T040010.200.json
+
+###
+
+GET http://localhost:3000/movies/actor/Leonardo
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035947.200.json
 
 ###
 
@@ -116,9 +80,86 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035930.200.json
+
+###
+
+GET http://localhost:3000/comment/one/5bd32a8c550c1d05341dd950
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035857.200.json
+
+###
+
+GET http://localhost:3000/comment
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035851.200.json
+
+###
+
+GET http://localhost:3000/usr
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035722.200.json
+
+###
+
+GET http://localhost:3000/comment/
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035656.200.json
+
+###
+
+PUT http://localhost:3000/comment/5bd32a73550c1d05341dd94e
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T035652.200.json
+
+###
+
+GET http://localhost:3000/comment
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
 {"operator":"yue","votefor":"Inception"}
 
-<> 2018-10-26T105435.200.json
+<> 2018-10-26T035624.200.json
+
+###
+
+GET http://localhost:3000/usr/myself
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"yue","votefor":"Inception"}
+
+<> 2018-10-26T035604.200.json
 
 ###
 
@@ -129,91 +170,18 @@ Content-Type: application/json
 
 {"operator":"yue","votefor":"Inception"}
 
-<> 2018-10-26T105428.200.json
+<> 2018-10-26T035553.200.json
 
 ###
 
-GET http://localhost:3000/%20/movies/actor/om
+GET http://localhost:3000/usr/vote
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
 {"operator":"yue","votefor":"Inception"}
 
-<> 2018-10-26T105331.404.html
-
-###
-
-GET http://localhost:3000/%20/movies
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue","votefor":"Inception"}
-
-<> 2018-10-26T105214.404.html
-
-###
-
-GET http://localhost:3000/%20/movies
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue","votefor":"Inception"}
-
-<> 2018-10-26T105203.404.html
-
-###
-
-GET http://localhost:3000/%20/movies
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue","votefor":"Inception"}
-
-<> 2018-10-26T105131.404.html
-
-###
-
-GET http://localhost:3000/%20/movies
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue","votefor":"Inception"}
-
-<> 2018-10-26T105118.404.html
-
-###
-
-PUT http://localhost:3000/%20/usr/vote
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue","votefor":"Inception"}
-
-###
-
-PUT http://localhost:3000/%20/usr/vote
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue","votefor":"Inception"}
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu"}
-
-<> 2018-10-26T104929.200.json
+<> 2018-10-26T035549.404.html
 
 ###
 
@@ -222,182 +190,53 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu"}
+{"operator":"xu","password":"123456","newpw":"new pw"}
 
-<> 2018-10-26T104902.200.json
+<> 2018-10-26T035500.200.json
 
 ###
 
-POST http://localhost:3000/usr/
+PUT http://localhost:3000/usr/pw
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"username":"yue","password":"123456","usertype":"common"}
+{"operator":"yue","password":"123456","newpw":"new pw"}
 
-<> 2018-10-26T104835.200.json
+<> 2018-10-26T035443.200.json
 
 ###
 
-POST http://localhost:3000/usr/
+POST http://localhost:3000/comment
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"username":"yue","password":"123456","usertype":"common"}
+{"username":"xu","commentfor":"The Shining","content":"Nice film"}
+
+<> 2018-10-26T035405.200.json
 
 ###
 
-GET http://localhost:3000/usr/myself
+POST http://localhost:3000/comment
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu"}
+{"username":"xu","commentfor":"Inception","content":"Nice film"}
 
-<> 2018-10-26T104642.200.json
+<> 2018-10-26T035353.200.json
 
 ###
 
-GET http://localhost:3000/usr/mysely
+POST http://localhost:3000/comment
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"yue"}
+{"username":"yue","commentfor":"Inception","content":"Nice film"}
 
-<> 2018-10-26T104627.404.html
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue"}
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"yue"}
-
-<> 2018-10-26T104542.200.json
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu"}
-
-<> 2018-10-26T104522.200.json
-
-###
-
-POST http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"yue","password":"123456","usertype":"common"}
-
-<> 2018-10-26T104438.200.json
-
-###
-
-POST http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"test","password":"123456","usertype":"common"}
-
-<> 2018-10-26T104303.200.json
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"xu","password":"123456","usertype":"common"}
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"xu","password":"123456","usertype":"common"}
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"xu","password":"123456","usertype":"common"}
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"xu","password":"123456","usertype":"common"}
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"test","password":"123456","usertype":"common"}
-
-###
-
-POST http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"test","password":"123456","usertype":"common"}
-
-<> 2018-10-26T103921.200.json
-
-###
-
-POST http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu","username":"test", "usertype": "common", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan" }
-
-<> 2018-10-26T103646.200.json
-
-###
-
-GET http://localhost:3000/movies
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu","name":"Dangal", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan" }
-
-<> 2018-10-26T103346.200.json
+<> 2018-10-26T035345.200.json
 
 ###
 
@@ -406,49 +245,42 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","name":"Dangal", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan" }
+{"operator":"xu","name":"test", "movietype": "ScienceFiction", "Directedby":"me Nolan","mainActor":"Leonardo me"}
 
-<> 2018-10-26T103335.200.json
+<> 2018-10-26T035305.200.json
 
 ###
 
-POST http://localhost:3000/movie
+POST http://localhost:3000/movies
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","name":"Dangal", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan" }
+{"operator":"xu","name":"Inception", "movietype": "ScienceFiction", "Directedby":"Christopher Nolan","mainActor":"Leonardo DiCaprio"}
 
-<> 2018-10-26T103325.404.html
+<> 2018-10-26T035249.200.json
 
 ###
 
-GET http://localhost:3000/usr
+POST http://localhost:3000/movies
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","username":"xu","password":"123456","usertype":"admin"}
+{"operator":"xu","name":"The Shining", "movietype": "Horror","Directedby":"Stanley Kubrick","mainActor":"Jack Nicholson"}
 
-<> 2018-10-26T103222.200.json
+<> 2018-10-26T035228.200.json
 
 ###
 
-GET http://localhost:3000/usr
+POST http://localhost:3000/usr
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","username":"xu","password":"123456","usertype":"admin"}
+{"username":"yue","password":"123456","usertype":"common"}
 
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"xu","password":"123456","usertype":"admin"}
+<> 2018-10-26T035207.200.json
 
 ###
 
@@ -459,16 +291,40 @@ Content-Type: application/json
 
 {"username":"xu","password":"123456","usertype":"admin"}
 
-<> 2018-10-26T103125.200.json
+<> 2018-10-26T035156.200.json
 
 ###
 
-POST http://localhost:3000/usr
+DELETE http://localhost:3000/movies/5bd3242cb51534045f7a6916
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"username":"xu","password":"123456","usertype":"admin"}
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T033803.200.json
+
+###
+
+GET http://localhost:3000/movies
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T033756.200.json
+
+###
+
+DELETE http://localhost:3000/usr/5bd32398b51534045f7a6911
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T033748.200.json
 
 ###
 
@@ -477,9 +333,69 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","username":"xu","commentfor":"Roman Holiday","content":"Nicehahahfilm"}
+{"operator":"xu","content":"new content","commentfor":"Inception"}
 
-<> 2018-10-25T061601.200.json
+<> 2018-10-26T033722.200.json
+
+###
+
+DELETE http://localhost:3000/comment/5bd32402b51534045f7a6915
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T033715.200.json
+
+###
+
+GET http://localhost:3000/comment
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T033702.200.json
+
+###
+
+GET http://localhost:3000/usr
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+<> 2018-10-26T033643.200.json
+
+###
+
+GET http://localhost:3000/usr
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+###
+
+GET http://localhost:3000/usr
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","content":"new content","commentfor":"Inception"}
+
+###
+
+GET http://localhost:3000/usr
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"content":"new content","commentfor":"Inception"}
 
 ###
 
@@ -488,31 +404,141 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","username":"xu","commentfor":"Roman Holiday","content":"Nicehahahfilm"}
+{"content":"new content","commentfor":"Inception"}
 
-<> 2018-10-25T061556.200.json
+<> 2018-10-26T033553.200.json
 
 ###
 
-DELETE http://localhost:3000/comment/5bd1fa2f2ced112a0984c293
+PUT http://localhost:3000/comment/5bd323f2b51534045f7a6914
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","username":"xu","commentfor":"Roman Holiday","content":"Nicehahahfilm"}
+{"content":"new content","commentfor":"Inception"}
 
-<> 2018-10-25T061551.200.json
+<> 2018-10-26T033546.200.json
 
 ###
 
-GET http://localhost:3000/usr
+GET http://localhost:3000/comment/
 Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"operator":"xu","username":"xu","commentfor":"Roman Holiday","content":"Nicehahahfilm"}
+{"operator":"xu","votefor":"Inception"}
 
-<> 2018-10-25T061542.200.json
+<> 2018-10-26T033518.200.json
+
+###
+
+GET http://localhost:3000/movies
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","votefor":"Inception"}
+
+<> 2018-10-26T033451.200.json
+
+###
+
+GET http://localhost:3000/usr/
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","votefor":"Inception"}
+
+<> 2018-10-26T033432.200.json
+
+###
+
+GET http://localhost:3000/usr/
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"yue","votefor":"Inception"}
+
+<> 2018-10-26T033425.200.json
+
+###
+
+PUT http://localhost:3000/usr/vote
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"yue","votefor":"Inception"}
+
+<> 2018-10-26T033421.200.json
+
+###
+
+PUT http://localhost:3000/usr/pw
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"yue","password":"123456","newpw":"new pw"}
+
+<> 2018-10-26T033344.200.json
+
+###
+
+PUT http://localhost:3000/usr/pw
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"yue","password":"123456","newpw:"new pw"}
+
+<> 2018-10-26T033327.400.html
+
+###
+
+GET http://localhost:3000/comment/xu
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","name":"test", "movietype": "ScienceFiction", "Directedby":"me Nolan","mainActor":"Leonardo me"}
+
+<> 2018-10-26T033214.200.json
+
+###
+
+GET http://localhost:3000/comment/movie/Inception
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","name":"test", "movietype": "ScienceFiction", "Directedby":"me Nolan","mainActor":"Leonardo me"}
+
+<> 2018-10-26T033159.200.json
+
+###
+
+GET http://localhost:3000/%20/comment/
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","name":"test", "movietype": "ScienceFiction", "Directedby":"me Nolan","mainActor":"Leonardo me"}
+
+<> 2018-10-26T033151.404.html
+
+###
+
+GET http://localhost:3000/%20/comment/
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"operator":"xu","name":"test", "movietype": "ScienceFiction", "Directedby":"me Nolan","mainActor":"Leonardo me"}
+
+<> 2018-10-26T033143.404.html
 
 ###
 

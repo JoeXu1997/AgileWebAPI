@@ -8,7 +8,9 @@
 //     {id: 1006, name:"The Shining ", movietype: 'Horror', Directedby:"Stanley Kubrick",mainActor:"Jack Nicholson", upvotes: 257},
 //     {id: 1007, name:"Despicable Me", movietype: 'Children', Directedby:"Chris Renaud & Pierre Coffin",mainActor:"Steve Carell", upvotes: 98},
 //     {id: 1008, "name":"Dangal", "movietype": 'Sports', "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan", upvotes: 307}
-// ];
+// ]
+// ;{"operator":"xu","name":"The Shining", "movietype": "Horror","Directedby":"Stanley Kubrick","mainActor":"Jack Nicholson"}
+//{"operator":"xu","name":"Inception", "movietype": 'ScienceFiction', "Directedby":"Christopher Nolan","mainActor":"Leonardo DiCaprio"}
 // module.exports = movies;
 let mongoose = require('mongoose');
 

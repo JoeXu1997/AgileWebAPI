@@ -5,7 +5,8 @@ var Movie = require('../models/movies');
 var User = require('../models/users');
 // mongoose.connect('mongodb://localhost:27017/moviedb');
 
-var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';//necessary
+//var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';//normal db
+var mongodbUri ='mongodb://joe:a123456@ds149593.mlab.com:49593/dbtest'   //used for test
 mongoose.connect(mongodbUri);
 let db = mongoose.connection;
 db.on('error', function (err) {

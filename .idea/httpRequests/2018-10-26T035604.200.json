@@ -1,0 +1,18 @@
+{
+  "actions": {
+    "comment": {
+      "commentfor": [
+        "Inception"
+      ],
+      "content": [
+        "Nice film"
+      ]
+    },
+    "upvotefor": "Inception"
+  },
+  "_id": "5bd32a17550c1d05341dd94a",
+  "username": "yue",
+  "password": "$2b$10$GSv6yuTdvxJKD6cBIhbOAuIxeTMrbNtcsrydJ.KyKuvXxqVZp0wYi",
+  "usertype": "common",
+  "__v": 1
+}
