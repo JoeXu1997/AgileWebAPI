@@ -31,7 +31,7 @@ describe('User API', function (){
         User.collection.drop();
         done();
     });
-    describe.only("GET functions",function () {
+    describe("GET functions",function () {
         describe('GET /usr',  function(){
             beforeEach(function (done) {
                 var newUser = new User({
@@ -144,23 +144,36 @@ describe('User API', function (){
             });
         });
     });
-    describe('POST functions',function () {
-        describe('POST /comment', function () {
-            it('should return confirmation message and update database(add a new comment)', function(done) {
-                let comment = {
-                    username: 'xu' ,
-                    commentfor: "Dangal",
-                    content: "nice movie"
+    describe.only('POST functions',function () {
+        describe('POST /usr', function () {
+            it('should return success message and update database(add a new user)', function(done) {
+                let user = {
+                    username: "test" ,
+                    password: "123456",
+                    usertype: "common"
                 };
                 chai.request(server)
-                    .post('/comment')
-                    .send(comment)
+                    .post('/usr')
+                    .send(user)
                     .end(function(err, res) {
                         expect(res).to.have.status(200);
-                        expect(res.body).to.have.property('message').equal('Comment Add Successful!' );
+                        expect(res.body).to.have.property('message').equal('User Add Successful!');
                         done();
                     });
             });
+            afterEach(function  (done) {
+                chai.request(server)
+                    .get('/usr')
+                    .send({"operator":"xu"})
+                    .end(function(err, res) {
+                        let result = _.map(res.body, (user) => {
+                            return { username: user.username,
+                                usertype: user.usertype };
+                        }  );
+                        expect(result[1]).to.include( { username: "test", usertype: "common"  } );
+                        done();
+                    });
+            });  // end-after
         });
     });
     describe('PUT /comment/:id', () => {
