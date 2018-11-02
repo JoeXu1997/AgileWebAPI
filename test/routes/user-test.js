@@ -1,5 +1,6 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
+var mongoose = require("mongoose");
 let server = require('../../bin/www');
 let expect = chai.expect;
 let User = require('../../models/users');
@@ -8,9 +9,48 @@ let _ = require('lodash' );
 chai.use(require('chai-things'));
 
 describe('User API', function (){
-    describe("GET functions",function () {
+    User.collection.drop();
+    beforeEach(function(done){
+        var newUser = new User({
+            username: 'xu',
+            password: '123456',
+            usertype: 'admin',
+            actions:{
+                upvotefor:"Inception",
+                comment:{
+                    commentfor:["Inception"],
+                    content:["Good Film"]
+                }
+            }
+        });
+        newUser.save(function(err) {
+            done();
+        });
+    });
+    afterEach(function(done){
+        User.collection.drop();
+        done();
+    });
+    describe.only("GET functions",function () {
         describe('GET /usr',  function(){
-            it('should return all the user with an array', function(done) {
+            beforeEach(function (done) {
+                var newUser = new User({
+                    username: "yue",
+                    password: "123456",
+                    usertype: "common",
+                    actions:{
+                        upvotefor:"Roman Holiday",
+                        comment:{
+                            commentfor:["Roman Holiday"],
+                            content:["Nice Film"]
+                        }
+                    }
+                });
+                newUser.save(function(err) {
+                    done();
+                });
+            })
+            it('should return all the user with an array if the operator is an admin', function(done) {
                 chai.request(server)
                     .get('/usr')
                     .send({"operator":"xu"})
@@ -21,7 +61,7 @@ describe('User API', function (){
                         done();
                     });
             });
-            it('should return wrong message', function(done) {
+            it('should return wrong message if operator is not an admin', function(done) {
                 chai.request(server)
                     .get('/usr')
                     .send({"operator":"yue"})
@@ -54,22 +94,46 @@ describe('User API', function (){
                     });
             });
         });
+        describe('/usr/upvote/:upvotefor',function () {
+            it('should return one user who upvote for specific movie', function(done) {
+                chai.request(server)
+                    .get('/usr/upvote/Inception')
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body[0]).to.have.property("username").equal("xu");
+                        done();
+                    });
+            });
+            it('should return empty array if the vote movie doesnot exist ', function(done) {
+                chai.request(server)
+                    .get('/usr/upvote/asd')
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body.length).to.equal(0);
+                        done();
+                    });
+            });
+        });
     });
-    describe('POST /comment', function () {
-        it('should return confirmation message and update database(add a new comment)', function(done) {
-            let comment = {
-                username: 'xu' ,
-                commentfor: "Dangal",
-                content: "nice movie"
-            };
-            chai.request(server)
-                .post('/comment')
-                .send(comment)
-                .end(function(err, res) {
-                    expect(res).to.have.status(200);
-                    expect(res.body).to.have.property('message').equal('Comment Add Successful!' );
-                    done();
-                });
+    describe('POST functions',function () {
+        describe('POST /comment', function () {
+            it('should return confirmation message and update database(add a new comment)', function(done) {
+                let comment = {
+                    username: 'xu' ,
+                    commentfor: "Dangal",
+                    content: "nice movie"
+                };
+                chai.request(server)
+                    .post('/comment')
+                    .send(comment)
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal('Comment Add Successful!' );
+                        done();
+                    });
+            });
         });
     });
     describe('PUT /comment/:id', () => {
