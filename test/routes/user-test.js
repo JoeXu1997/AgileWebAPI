@@ -7,7 +7,7 @@ let Movie = require('../../models/movies');
 chai.use(chaiHttp);
 let _ = require('lodash' );
 chai.use(require('chai-things'));
-
+var id;
 describe('User API', function (){
     User.collection.drop();
     beforeEach(function(done){
@@ -69,7 +69,6 @@ describe('User API', function (){
                         expect(res.body).to.have.property('message',"You donnot have right to do this operation!") ;
                         done();
                     });
-
             });
         });
         describe('GET /usr/myself',function () {
@@ -176,7 +175,7 @@ describe('User API', function (){
             });  // end-after
         });
     });
-    describe.only('PUT functions',function () {
+    describe('PUT functions',function () {
         beforeEach(function (done) {
             var newUser = new User({
                 username: "yue",
@@ -251,16 +250,22 @@ describe('User API', function (){
             });
         })
     });
-    describe('DELETE /comment/:id',() => {
-        it('should return a message and delete a donation record', function (done) {
+    describe('DELETE /usr/:id',() => {
+        beforeEach(function (done) {
+            User.find(function (err,users) {
+                id =users[0]._id;
+                done();
+            })
+        })
+        it('should return a message and delete a user record', function (done) {
             chai.request(server)
-                .delete('/comment/5bd1f7c2329ef129b6b54d0a')
+                .delete('/usr/'+id)
+                .send({"operator":"xu"})
                 .end(function (err, res) {
                     expect(res).to.have.status(200);
-                    expect(res.body).to.have.property('message', 'Delete Successful');
-                    let comment = res.body.data;
-                    expect(comment.commentfor).is.to.equal("Roman Holiday");
-                    expect(comment.content).is.to.equal("Nice film");
+                    expect(res.body).to.have.property('message',  "Delete Successful");
+                    let user = res.body.data;
+                    expect(user.username).is.to.equal("xu");
                     done();
                 });
         });
