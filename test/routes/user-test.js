@@ -105,7 +105,34 @@ describe('User API', function (){
                         done();
                     });
             });
-            it('should return empty array if the vote movie doesnot exist ', function(done) {
+            it('should return empty array if the voted-movie doesnot exist ', function(done) {
+                chai.request(server)
+                    .get('/usr/upvote/asd')
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body.length).to.equal(0);
+                        done();
+                    });
+            });
+        });
+        describe('/usr/comment/:commentfor',function () {
+            it('should return users who comment on a specific movie', function(done) {
+                chai.request(server)
+                    .get('/usr/comment/Inception')
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        let result = _.map(res.body, (user) => {
+                            return { username: user.username,
+                                commentfor: user.actions.comment.commentfor[0],
+                                content: user.actions.comment.content[0]};
+                        }  );
+                        expect(result[0]).to.include( { username: "xu", commentfor: "Inception" ,content:"Good Film" } );
+                        done();
+                    });
+            });
+            it('should return empty array if the commented-movie doesnot exist ', function(done) {
                 chai.request(server)
                     .get('/usr/upvote/asd')
                     .end((err, res) => {
