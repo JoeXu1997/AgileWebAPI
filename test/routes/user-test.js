@@ -1,9 +1,9 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-var mongoose = require("mongoose");
 let server = require('../../bin/www');
 let expect = chai.expect;
 let User = require('../../models/users');
+let Movie = require('../../models/movies');
 chai.use(chaiHttp);
 let _ = require('lodash' );
 chai.use(require('chai-things'));
@@ -144,7 +144,7 @@ describe('User API', function (){
             });
         });
     });
-    describe.only('POST functions',function () {
+    describe('POST functions',function () {
         describe('POST /usr', function () {
             it('should return success message and update database(add a new user)', function(done) {
                 let user = {
@@ -176,18 +176,80 @@ describe('User API', function (){
             });  // end-after
         });
     });
-    describe('PUT /comment/:id', () => {
-        it('should return a comment and the comment content should be different with before', function(done) {
-            chai.request(server)
-                .put('/comment/5bd1c916f6bf492830ff24ec')
-                .send({commentfor:"Inception",content:"new nice flim"})
-                .end(function(err, res) {
-                    expect(res).to.have.status(200);
-                    let donation = res.body.data ;
-                    expect(donation).to.include( { _id: "5bd1c916f6bf492830ff24ec", content: "new nice flim"  } );//depends on existing comments
+    describe.only('PUT functions',function () {
+        beforeEach(function (done) {
+            var newUser = new User({
+                username: "yue",
+                password: "123456",
+                usertype: "common"
+            });
+            newUser.save(function(err) {
+                done();
+            });
+        });
+        describe('PUT /usr/pw', () => {
+            it('should return success message and user password should be different with before', function(done) {
+                chai.request(server)
+                    .put('/usr/pw')
+                    .send({"operator":"xu","newpw":"newone"})
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal("Change Successfully");
+                        let user = res.body.data ;
+                        expect(user).to.have.property('password').equal("newone");
+                        done();
+                    });
+            });
+            it('should failed message if the operator doesnot exist', function(done) {
+                chai.request(server)
+                    .put('/usr/pw')
+                    .send({"operator":"xus","newpw":"newone"})
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal("Change Failed! No Such User!");
+                        done();
+                    });
+            });
+        });
+        describe('PUT /usr/vote',function () {
+            beforeEach(function (done) {
+                var movie = new Movie({
+                    name:"Inception",
+                    movietype: 'ScienceFiction',
+                    Directedby:"Christopher Nolan",
+                    mainActor:"Leonardo DiCaprio"});
+
+                movie.save(function(err) {
                     done();
                 });
-        });
+            });
+            afterEach(function (done) {
+                Movie.collection.drop();
+                done();
+            })
+            it('should return success message and user should voted for one movie after this', function(done) {
+                chai.request(server)
+                    .put('/usr/vote')
+                    .send({"operator":"yue","votefor":"Inception"})
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal('Vote Successful!');
+                        expect(res.body.data).to.have.property('username').equal('yue');
+                        expect(res.body.data.actions).to.have.property('upvotefor').equal('Inception');
+                        done();
+                    });
+            });
+            it('should return failed message if the user had already vote for other movies', function(done) {
+                chai.request(server)
+                    .put('/usr/vote')
+                    .send({"operator":"xu","votefor":"Inception"})
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal("Each user could vote for only one movie");
+                        done();
+                    });
+            });
+        })
     });
     describe('DELETE /comment/:id',() => {
         it('should return a message and delete a donation record', function (done) {
