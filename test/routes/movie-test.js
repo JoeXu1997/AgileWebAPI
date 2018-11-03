@@ -113,38 +113,44 @@ describe('Movie API', function (){
             });
         });
     });
-    // describe('POST functions',function () {
-    //     describe('POST /usr', function () {
-    //         it('should return success message and update database(add a new user)', function(done) {
-    //             let user = {
-    //                 username: "test" ,
-    //                 password: "123456",
-    //                 usertype: "common"
-    //             };
-    //             chai.request(server)
-    //                 .post('/usr')
-    //                 .send(user)
-    //                 .end(function(err, res) {
-    //                     expect(res).to.have.status(200);
-    //                     expect(res.body).to.have.property('message').equal('User Add Successful!');
-    //                     done();
-    //                 });
-    //         });
-    //         afterEach(function  (done) {
-    //             chai.request(server)
-    //                 .get('/usr')
-    //                 .send({"operator":"xu"})
-    //                 .end(function(err, res) {
-    //                     let result = _.map(res.body, (user) => {
-    //                         return { username: user.username,
-    //                             usertype: user.usertype };
-    //                     }  );
-    //                     expect(result[1]).to.include( { username: "test", usertype: "common"  } );
-    //                     done();
-    //                 });
-    //         });  // end-after
-    //     });
-    // });
+    describe('POST functions',function () {
+        describe('POST /movies', function () {
+            it('should return success message and update database(add a new movie)', function(done) {
+                let movie = {
+                    name: "test",
+                    movietype: "Horror",
+                    Directedby: "me",
+                    mainActor:"me"
+                }
+                chai.request(server)
+                    .post('/addmoviestest')
+                    .send(movie)
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal('Movie Add Successful!');
+                        done();
+                    });
+            });
+            afterEach(function  (done) {
+                chai.request(server)
+                    .get('/movies')
+                    .end(function(err, res) {
+                        let result = _.map(res.body, (movie) => {
+                            return { name: movie.name,
+                                movietype: movie.movietype,
+                                Directedby:movie.Directedby,
+                                mainActor:movie.mainActor};
+                        }  );
+                        expect(result[2]).to.include( {
+                            name: "test",
+                            movietype: "Horror",
+                            Directedby: "me",
+                            mainActor:"me"  } );
+                        done();
+                    });
+            });  // end-after
+        });
+    });
     // describe('PUT functions',function () {
     //     beforeEach(function (done) {
     //         var newUser = new User({
