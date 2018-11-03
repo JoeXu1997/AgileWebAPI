@@ -30,8 +30,8 @@ describe('Movie API', function (){
         });
     });
     afterEach(function(done){
-        Movie.collection.drop();
         done();
+        Movie.collection.drop();
     });
     describe("GET functions",function () {
         describe('GET /movies',  function(){
@@ -160,7 +160,7 @@ describe('Movie API', function (){
             });  // end-after
         });
     });
-    describe.only('PUT functions',function () {
+    describe('PUT functions',function () {
         describe('PUT /movies/:id', () => {
             it('should return success message and add 1 to movie upvotes', function(done) {
                 var newUser1 = new User({
@@ -219,24 +219,43 @@ describe('Movie API', function (){
             });
         });
     });
-    // describe('DELETE /usr/:id',() => {
-    //     beforeEach(function (done) {
-    //         User.find(function (err,users) {
-    //             id =users[0]._id;
-    //             done();
-    //         })
-    //     })
-    //     it('should return a message and delete a user record', function (done) {
-    //         chai.request(server)
-    //             .delete('/usr/'+id)
-    //             .send({"operator":"xu"})
-    //             .end(function (err, res) {
-    //                 expect(res).to.have.status(200);
-    //                 expect(res.body).to.have.property('message',  "Delete Successful");
-    //                 let user = res.body.data;
-    //                 expect(user.username).is.to.equal("xu");
-    //                 done();
-    //             });
-    //     });
-    // });
+    describe('DELETE /movies/:id',() => {
+        it('should return success message and delete one movie', function(done) {
+            var newUser1 = new User({
+                username: 'test',
+                password: '123456',
+                usertype: "admin",
+            });
+            newUser1.save();
+            Movie.find({},function (err,movie) {
+                chai.request(server)
+                    .delete('/movies/'+movie[0]._id)
+                    .send({"operator":"test"})
+                    .end(function(err, res) {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('message').equal("Delete Successful");
+                        done();
+                    });
+            })
+
+        });
+        it('should failed message if the operator not an admin', function(done) {
+            var newUser = new User({
+                username: 'test2',
+                password: '123456',
+                usertype: "common",
+            });
+            newUser.save();
+            Movie.find({},function (err,movie){
+                chai.request(server)
+                    .delete('/movies/'+movie[0]._id)
+                    .send({"operator":"test2"})
+                    .end(function(err, res) {
+                        expect(res.body).to.have.property('message').equal("You donot have this authority");
+                        done();
+                    });
+            })
+
+        });
+    });
 });
