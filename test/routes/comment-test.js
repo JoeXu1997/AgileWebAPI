@@ -158,14 +158,26 @@ describe('Comments API', function (){
         it('should return a comment and the comment content should be different with before', function(done) {
             chai.request(server)
                 .put('/comment/'+commentid)
-                .send({commentfor:"Inception",content:"new nice flim"})
+                .send({commentfor:"Inception",content:"I love this movie"})
                 .end(function(err, res) {
                     expect(res).to.have.status(200);
-                    let donation = res.body.data ;
-                    expect(donation).to.include( { _id: commentid, content: "new nice flim"  } );//depends on existing comments
+                    expect(res.body).to.have.property('message').equal("Update Successful");
+                    expect(res.body.data).to.have.property('commentfor').equal("Inception");
+                    expect(res.body.data).to.have.property('content').equal("I love this movie");
                     done();
                 });
         });
+        afterEach(function (done) {
+            chai.request(server)
+                .get('/usr/myself')
+                .send({"operator":"xu"})
+                .end(function (err,res) {
+                    console.log(res.body.actions.comment+"2")
+                    expect(res.body.actions.comment.commentfor[0]).is.to.equal("Inception")
+                    expect(res.body.actions.comment.content[0]).is.to.equal("I love this movie")
+                    done();
+                })
+        })
     });
     describe('DELETE /comment/:id',() => {
         it('should return a message and delete a donation record', function (done) {
