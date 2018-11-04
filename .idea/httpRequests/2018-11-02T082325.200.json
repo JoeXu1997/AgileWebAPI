@@ -1,0 +1,17 @@
+{
+  "message": "Change Successfully",
+  "data": {
+    "actions": {
+      "comment": {
+        "commentfor": [],
+        "content": []
+      },
+      "upvotefor": ""
+    },
+    "_id": "5bdcaf89d1a57a05df963f25",
+    "username": "xu",
+    "password": "admin",
+    "usertype": "admin",
+    "__v": 0
+  }
+}

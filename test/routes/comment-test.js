@@ -9,8 +9,6 @@ chai.use(chaiHttp);
 let _ = require('lodash' );
 chai.use(require('chai-things'));
 var commentid;
-let testuser;
-let testmovie;
 describe('Comments API', function (){
     beforeEach(function (done) {
         var  user = new User({
@@ -58,7 +56,7 @@ describe('Comments API', function (){
             commentfor: "Inception",
             content: "Good Film"
         })
-        comment1.save(function (err) {
+        comment1.save(function (err,data) {
             done();
         })
     });
@@ -67,11 +65,11 @@ describe('Comments API', function (){
         done();
     });
     afterEach(function(done){
-        User.collection.drop();
+        Comment.collection.drop();
         done();
     });
     afterEach(function(done){
-        Comment.collection.drop();
+        User.collection.drop();
         done();
     });
     describe("GET functions",function () {
@@ -145,6 +143,15 @@ describe('Comments API', function (){
         });
         afterEach(function (done) {
             chai.request(server)
+                .get('/comment')
+                .end(function (err,res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.a('array');
+                    expect(res.body.length).to.equal(3);
+                    expect(res.body[2].content).to.equal("new nice movie");
+                    done();
+                })
+            chai.request(server)
                 .get('/usr/myself')
                 .send({"operator":"xu"})
                 .end(function (err,res) {
@@ -156,6 +163,7 @@ describe('Comments API', function (){
     });
     describe('PUT /comment/:id', () => {
         it('should return a comment and the comment content should be different with before', function(done) {
+            console.log(commentid)
             chai.request(server)
                 .put('/comment/'+commentid)
                 .send({commentfor:"Inception",content:"I love this movie"})
@@ -172,14 +180,13 @@ describe('Comments API', function (){
                 .get('/usr/myself')
                 .send({"operator":"xu"})
                 .end(function (err,res) {
-                    console.log(res.body.actions.comment+"2")
                     expect(res.body.actions.comment.commentfor[0]).is.to.equal("Inception")
                     expect(res.body.actions.comment.content[0]).is.to.equal("I love this movie")
                     done();
                 })
         })
     });
-    describe('DELETE /comment/:id',() => {
+    describe.only('DELETE /comment/:id',() => {
         it('should return a message and delete a donation record', function (done) {
             chai.request(server)
                 .delete('/comment/'+commentid)
@@ -192,16 +199,16 @@ describe('Comments API', function (){
                     done();
                 });
         });
-        afterEach(function (done) {
-            chai.request(server)
-                .get('/usr/myself')
-                .send({"operator":"xu"})
-                .end(function (err,res) {
-                    expect(res.body.actions.comment.commentfor.length).to.equal(1);
-                    expect(res.body.actions.comment.commentfor[0]).is.to.equal("Inception")
-                    expect(res.body.actions.comment.content[0]).is.to.equal("Good Film")
-                    done();
-                })
-        })
+        // afterEach(function (done) {
+        //     chai.request(server)
+        //         .get('/usr/myself')
+        //         .send({"operator":"xu"})
+        //         .end(function (err,res) {
+        //             expect(res.body.actions.comment.commentfor.length).to.equal(2);
+        //             expect(res.body.actions.comment.commentfor[0]).is.to.equal("Inception")
+        //             expect(res.body.actions.comment.content[0]).is.to.equal("Nice Movie")
+        //             done();
+        //         })
+        // })
     });
 });

@@ -1,0 +1,20 @@
+[
+  {
+    "actions": {
+      "comment": {
+        "commentfor": [
+          "Inception"
+        ],
+        "content": [
+          "nice"
+        ]
+      },
+      "upvotefor": ""
+    },
+    "_id": "5bdf1d3548852f137dcf1608",
+    "username": "xu",
+    "password": "$2b$10$w1CX5qA3m/TZen/PHLG9x.GBIbWLKbPAxbqeMMBdBSKZ/GvS5XpI6",
+    "usertype": "admin",
+    "__v": 1
+  }
+]

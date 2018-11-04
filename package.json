@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "commenttest": "mocha test/routes/comment-test.js --timeout 10000",
-    "movietest": "mocha test/routes/movie-test.js --timeout 10000",
-    "usertest": "mocha test/routes/user-test.js --timeout 10000"
+    "test": "mocha test/routes/comment-test.js --timeout 10000"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",

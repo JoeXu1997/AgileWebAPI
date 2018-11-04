@@ -29,7 +29,7 @@ router.addMovie = (req, res) => {
             movie.Directedby = req.body.Directedby;
             movie.mainActor = req.body.mainActor;
 
-            movie.save(function(err) {
+            movie.save(function(err,movie) {
                 if (err)
                     res.json({ message: 'Movie Add Failed!', errmsg : err });
                 else
@@ -39,6 +39,22 @@ router.addMovie = (req, res) => {
             res.send({message:"You donnot have this authority"})
     });
 };
+router.addMovietest = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+        var movie = new Movie();
+        movie.name = req.body.name;
+        movie.movietype = req.body.movietype;
+        movie.Directedby = req.body.Directedby;
+        movie.mainActor = req.body.mainActor;
+
+        movie.save(function(err) {
+            if (err)
+                res.json({ message: 'Movie Add Failed!', errmsg : err });
+            else
+                res.json({ message: 'Movie Add Successful!',data:movie});
+        });
+
+};
 router.getMoviesByType = (req, res) => {
 
     res.setHeader('Content-Type', 'application/json');
@@ -46,8 +62,10 @@ router.getMoviesByType = (req, res) => {
     Movie.find({ "movietype" : req.params.movietype },function(err, movie) {
         if (err)
             res.send({ message: 'Donation NOT Found!', errmsg : err });
-        else
+        else{
             res.send(JSON.stringify(movie,null,5));
+        }
+
     });
 };
 router.getMoviesByActor = (req, res) => {         //reference http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp
@@ -56,7 +74,6 @@ router.getMoviesByActor = (req, res) => {         //reference http://www.w3schoo
     if(req.params.mainActor) {
         query['mainActor']=new RegExp(req.params.mainActor);//模糊查询参数
     }
-    console.log(query);
     Movie.find(query,function(err, movie){
         if (err){
             res.send({ message: 'No Such Movies!', errmsg : err });
@@ -73,7 +90,6 @@ router.getMoviesByDirector = (req, res) => {
     if(req.params.Directedby) {
         query['Directedby']=new RegExp(req.params.Directedby);//模糊查询参数
     }
-    console.log(query);
     Movie.find(query,function(err, movie){
         if (err){
             res.send({ message: 'No Such Movies!', errmsg : err });
@@ -91,7 +107,7 @@ router.rankformovies = (req, res) => {
         if (err)
             res.send(err);
 
-        res.send(JSON.stringify(movies,null,5));
+        res.json({ message: 'Search Successful!',data:movies});
     });
 };
 router.removeMovie = (req, res) => {

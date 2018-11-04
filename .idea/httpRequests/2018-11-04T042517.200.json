@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5bdf1d6d48852f137dcf1609",
+    "name": "Inception",
+    "movietype": "ScienceFiction",
+    "Directedby": "Christopher Nolan",
+    "mainActor": "Leonardo DiCaprio",
+    "__v": 0
+  }
+}

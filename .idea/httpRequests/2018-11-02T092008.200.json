@@ -1,0 +1,17 @@
+{
+  "message": "Vote Successful!",
+  "data": {
+    "actions": {
+      "comment": {
+        "commentfor": [],
+        "content": []
+      },
+      "upvotefor": "Inception"
+    },
+    "_id": "5bdcbef779541206a2610ddc",
+    "username": "test",
+    "password": "$2b$10$qKfrjLLUHjqRqvH/YcdCpOqIfACGHVqvvJFaO1Ebco2xMxlUISy..",
+    "usertype": "admin",
+    "__v": 0
+  }
+}

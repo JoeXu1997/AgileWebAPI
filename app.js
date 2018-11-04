@@ -31,6 +31,7 @@ app.put('/movies/:id',movies.upvote);
 app.get('/movies',movies.rankformovies);
 app.delete('/movies/:id',movies.removeMovie)
 app.post('/movies',movies.addMovie);
+app.post('/addmoviestest',movies.addMovietest);
 app.get('/movies/:movietype',movies.getMoviesByType);
 app.get('/movies/actor/:mainActor',movies.getMoviesByActor);//fuzzy?
 app.get('/movies/director/:Directedby',movies.getMoviesByDirector);// params or query?

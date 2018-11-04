@@ -72,8 +72,9 @@ router.editComment=(req,res)=>{//params + body  {"content":"new content","commen
             editUsrComment(comment.username,comment.commentfor,comment.content,newcommentfor,newcontent);
             comment.commentfor=newcommentfor;
             comment.content=newcontent;
-            comment.save();
-            res.json({message:"Update Successful",data:comment});
+            comment.save(function () {
+                res.json({message:"Update Successful",data:comment});
+            });
         }
     });
 };
@@ -87,10 +88,10 @@ function editUsrComment(username,commentfor,content,newcommentfor,newcontent){
         for(var i=0;i<user.actions.comment.commentfor.length;i++){
             if(user.actions.comment.commentfor[i]===commentfor && user.actions.comment.content[i]===content){
                 console.log("in if")
-                console.log( user.actions.comment.content[i]);
                 user.actions.comment.commentfor.splice(i,1,newcommentfor);
                 user.actions.comment.content.splice(i,1,newcontent);
                 user.save();
+                console.log(user.actions.comment+"1")
             }
         }
     });

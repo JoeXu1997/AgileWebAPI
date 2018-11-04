@@ -1,0 +1,16 @@
+[
+  {
+    "actions": {
+      "comment": {
+        "commentfor": [],
+        "content": []
+      },
+      "upvotefor": ""
+    },
+    "_id": "5bdcaf89d1a57a05df963f25",
+    "username": "xu",
+    "password": "$2b$10$LBCM5sidLRAM65F5eRuFRuj44l6m5i.cF0x0J921wK9tjLvbLvCeO",
+    "usertype": "admin",
+    "__v": 0
+  }
+]

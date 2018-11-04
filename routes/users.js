@@ -23,7 +23,7 @@ router.getusers = (req, res) => {
         if(user.usertype==="admin"){
             User.find(function(err, users) {
                 if (err){
-                    res.send(err);
+                    res.send({ message: 'No Such User!', errmsg : err });
                 }else
                     res.send(JSON.stringify(users, null, 5));
 
@@ -36,7 +36,7 @@ router.getMy=(req,res)=>{
     res.setHeader('Content-Type', 'application/json');
     User.findOne({"username":req.body.operator},function (err,user) {
         if (err){
-            res.send(err);
+            res.send({ message: 'No Such User!', errmsg : err });
         }else
             res.send(JSON.stringify(user, null, 5));
     })
@@ -59,7 +59,7 @@ router.addUpvote = (req,res)=>{//{"operator":"","votefor":"Roman Holiday"}
                 if (err)
                     res.json({ message: 'Vote Failed!', errmsg : err });
                 else
-                    res.json({ message: 'Votr Successful!',data:user});
+                    res.json({ message: 'Vote Successful!',data:user});
             });
             Movie.findOne({"name":req.body.votefor},function (err,movie) {
                 movie.upvotes+=1;
@@ -80,14 +80,15 @@ router.getUserWithCommentfor = (req,res) =>{
     });
 };
 router.changepw = (req,res) =>{
-    User.update({"username":req.body.operator,"password":req.body.password},{"password":req.body.newpw}, function(err,user) {//{operator:xx,password:xx,newpassword:xxx}
-        if (err)
-            res.json({message:"User Not Found",errmsg:err});
-        else {
-            res.json({message:"Change Successful",data:user});
+    User.findOne({"username":req.body.operator},function (err,user) {
+        if(user !=null){
+            user.password=req.body.newpw;
+            user.save();
+            res.send({ message:"Change Successfully", data : user });
+        }else
+            res.send({ message:"Change Failed! No Such User!"});
+    })
 
-        }
-    });
 };
 
 router.removeOneUser = (req,res) =>{    //{"operatot":xx}
@@ -98,10 +99,10 @@ router.removeOneUser = (req,res) =>{    //{"operatot":xx}
                 if (err)
                     res.json({message: "Delete Failed", errmsg: err})
                 else
-                    res.json({message: "Delete Successful"})
+                    res.json({message: "Delete Successful",data:user})
             });
         }else
-            res.send({message:"You donnot have this authority"})
+            res.send({message:"You donot have this authority"})
     });
 };
 

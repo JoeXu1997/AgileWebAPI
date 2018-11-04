@@ -35,10 +35,48 @@ describe('Movie API', function (){
             done();
         });
     });
+    beforeEach(function (done) {
+        var newUser1 = new User({
+            username: 'yue',
+            password: '123456',
+            usertype: 'admin',
+            actions: {
+                upvotefor: "",
+                comment:{
+                    commentfor: [],
+                    content: []
+                }
+            }
+        });
+        newUser1.save(function (err) {
+            done();
+        });
+    })
+    beforeEach(function (done) {
+        var newUser = new User({
+            username: 'xu',
+            password: '123456',
+            usertype: 'admin',
+            actions:{
+                upvotefor:"Inception",
+                comment:{
+                    commentfor:["Inception"],
+                    content:["Good Film"]
+                }
+            }
+        });
+        newUser.save(function (err) {
+            done();
+        });
+    })
     afterEach(function(done){
-        Movie.collection.drop();console.log("delete")
+        Movie.collection.drop();
         done();
     });
+    afterEach(function (done) {
+        User.collection.drop();
+        done();
+    })
     describe("GET functions",function () {
         describe('GET /movies',  function() {
                 it('should return all the movies in an array ordered by upvotes', function (done) {
@@ -46,8 +84,8 @@ describe('Movie API', function (){
                         .get('/movies')
                         .end((err, res) => {
                             expect(res).to.have.status(200);
-                            expect(res.body).to.be.a('array');
-                            expect(res.body.length).to.equal(2);
+                            expect(res.body.data).to.be.a('array');
+                            expect(res.body.data.length).to.equal(2);
                             done();
                         });
                 });
@@ -123,10 +161,11 @@ describe('Movie API', function (){
     describe('POST functions',function () {
         it('should return success message and update database(add a new movie)', function(done) {
             let movie = {
-                "name": "test",
-                "movietype": "Horror",
-                "Directedby": "me",
-                "mainActor":"me"
+                name: "test",
+                movietype: "Horror",
+                Directedby: "me",
+                mainActor:"me",
+                upvotes:0
             }
             chai.request(server)
                 .post('/addmoviestest')
@@ -142,56 +181,26 @@ describe('Movie API', function (){
             chai.request(server)
                 .get('/movies')
                 .end(function(err, res) {
-                    let result = _.map(res.body, (movie) => {
-                        return { name: movie.name,
-                            movietype: movie.movietype,
-                            Directedby:movie.Directedby,
-                            mainActor:movie.mainActor};
-                    }  );
-                    expect(result[1]).to.have.property("name").equal("test");
+                    let result = res.body.data;
+                    expect(result[2]).to.have.property("name").equal("test");
                     done();
                 });
         });  // end-after
     });
     describe('PUT functions',function () {
-        afterEach(function (done) {
-            User.collection.drop();
-            done();
-        })
         it('should return success message and add 1 to movie upvotes', function(done) {
-            var newUser1 = new User({
-                username: 'yue',
-                password: '123456',
-                usertype: 'admin',
-            });
-            newUser1.save();
-            Movie.find({},function (err,movie) {
-                chai.request(server)
-                    .put('/movies/'+id)
-                    .send({"operator":"yue"})
-                    .end(function(err, res) {
-                        expect(res).to.have.status(200);
-                        expect(res.body).to.have.property('message').equal("Upvote Successful");
-                        let movie = res.body.data ;
-                        expect(movie).to.have.property('upvotes').equal(2);
-                        done();
-                    });
-            })
+            chai.request(server)
+                .put('/movies/'+id)
+                .send({"operator":"yue"})
+                .end(function(err, res) {
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.have.property('message').equal("Upvote Successful");
+                    let movie = res.body.data ;
+                    expect(movie).to.have.property('upvotes').equal(2);
+                    done();
+                });
         });
-        it('should failed message if the operator already vote for other movies', function(done) {
-            var newUser = new User({
-                username: 'xu',
-                password: '123456',
-                usertype: 'admin',
-                actions:{
-                    upvotefor:"Inception",
-                    comment:{
-                        commentfor:["Inception"],
-                        content:["Good Film"]
-                    }
-                }
-            });
-            newUser.save();
+        it('should failed if the operator already vote for other movies', function(done) {
             Movie.find({},function (err,movie) {
                 chai.request(server)
                     .put('/movies/'+id)

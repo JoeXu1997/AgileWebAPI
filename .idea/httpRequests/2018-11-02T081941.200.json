@@ -1,0 +1,10 @@
+{
+  "message": "User Add Failed!",
+  "errmsg": {
+    "driver": true,
+    "name": "MongoError",
+    "index": 0,
+    "code": 11000,
+    "errmsg": "E11000 duplicate key error index: dbtest.user.$username_1 dup key: { : \"xu\" }"
+  }
+}
