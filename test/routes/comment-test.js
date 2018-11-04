@@ -192,5 +192,16 @@ describe('Comments API', function (){
                     done();
                 });
         });
+        afterEach(function (done) {
+            chai.request(server)
+                .get('/usr/myself')
+                .send({"operator":"xu"})
+                .end(function (err,res) {
+                    expect(res.body.actions.comment.commentfor.length).to.equal(1);
+                    expect(res.body.actions.comment.commentfor[0]).is.to.equal("Inception")
+                    expect(res.body.actions.comment.content[0]).is.to.equal("Good Film")
+                    done();
+                })
+        })
     });
 });
