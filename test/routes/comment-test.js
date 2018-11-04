@@ -3,35 +3,122 @@ let chaiHttp = require('chai-http');
 let server = require('../../bin/www');
 let expect = chai.expect;
 let Comment = require('../../models/comment');
+let User = require('../../models/users');
+let Movie = require('../../models/movies');
 chai.use(chaiHttp);
 let _ = require('lodash' );
 chai.use(require('chai-things'));
-
-describe('Comments', function (){
-    beforeEach(function () {
-        while(Comment.length > 0) {
-            Comment.pop();
-        }
-        datastore.push(
-            {username:"joe",commentfor:"Inception",content:"Nice film"}
-        );
-        datastore.push(
-            {username:"test",commentfor:"Roman Holiday",content:"Good film"}
-        );
+var commentid;
+describe('Comments API', function (){
+    beforeEach(function (done) {
+        var  user = new User({
+          username: "xu",
+          password: "123456",
+          usertype: "admin"
+      })
+        user.save(function (err) {
+            done();
+        })
     });
-    describe('GET /comment',  () => {
-        it('should return all the comments in an array', function(done) {
-            chai.request(server)
-                .get('/comment')
-                .end((err, res) => {
-                    expect(res).to.have.status(200);
-                    expect(res.body).to.be.a('array');
-                    expect(res.body.length).to.equal(2);//according to collection comment
-                    done();
-                });
+    beforeEach(function (done) {
+        var movie = new Movie({
+            name:"Inception",
+            movietype: 'ScienceFiction',
+            Directedby:"Christopher Nolan",
+            mainActor:"Leonardo DiCaprio",
+            upvotes: 2
         });
+        movie.save(function (err) {
+            done();
+        });
+    })
+    beforeEach(function (done) {
+        var  comment = new Comment({
+            username: "xu",
+            commentfor: "Inception",
+            content: "Nice Movie"
+        })
+        comment.save(function (err,data) {
+            commentid=data._id;
+            done();
+        })
     });
-    describe('POST /donations', function () {
+    beforeEach(function (done) {
+        var  comment1 = new Comment({
+            username: "xu",
+            commentfor: "Inception",
+            content: "Good Film"
+        })
+        comment1.save(function (err) {
+            done();
+        })
+    });
+    afterEach(function(done){
+        Movie.collection.drop();
+        done();
+    });
+    afterEach(function(done){
+        User.collection.drop();
+        done();
+    });
+    afterEach(function(done){
+        Comment.collection.drop();
+        done();
+    });
+    describe.only("GET functions",function () {
+        describe('GET /comment',  () => {
+            it('should return all the comments in an array', function(done) {
+                chai.request(server)
+                    .get('/comment')
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.be.a('array');
+                        expect(res.body.length).to.equal(2);
+                        done();
+                    });
+            });
+        });
+        describe('GET /comment/one/:id',function () {
+            it('should return one comment with specific id', function(done) {
+                chai.request(server)
+                    .get('/comment/one/'+commentid)
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body).to.have.property('username').equal('xu' );
+                        expect(res.body).to.have.property('commentfor').equal('Inception' );
+                        expect(res.body).to.have.property('content').equal('Nice Movie' );
+                        done();
+                    });
+            });
+        });
+        describe('GET /comment/movie/:commentfor',function () {
+            it('should return specific movie\'s all comments ', function(done) {
+                chai.request(server)
+                    .get('/comment/movie/'+"Inception")
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body.length).to.equal(2);
+                        expect(res.body[0]).to.have.property("content").equal("Nice Movie");
+                        expect(res.body[1]).to.have.property("content").equal("Good Film");
+                        done();
+                    });
+            });
+        });
+        describe('GET /comment/:username',function () {
+            it('should return specific user\'s all comments ', function(done) {
+                chai.request(server)
+                    .get('/comment/'+"xu")
+                    .end((err, res) => {
+                        expect(res).to.have.status(200);
+                        expect(res.body.length).to.equal(2);
+                        expect(res.body[0]).to.have.property("content").equal("Nice Movie");
+                        expect(res.body[1]).to.have.property("content").equal("Good Film");
+                        done();
+                    });
+            });
+        });
+    })
+    describe('POST /comment', function () {
         it('should return confirmation message and update database(add a new comment)', function(done) {
             let comment = {
                 username: 'xu' ,
