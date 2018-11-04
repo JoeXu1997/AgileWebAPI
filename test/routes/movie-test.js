@@ -20,7 +20,19 @@ describe('Movie API', function (){
         });
         newMovie.save(function(err,data) {
             id = data._id
-            done();console.log("add done")
+            done();
+        });
+    });
+    beforeEach(function (done) {
+        var movie = new Movie({
+            name: "made",
+            movietype: 'Comedy',
+            Directedby: "Zhen me Liu",
+            mainActor: "Xing me",
+            upvotes: 2
+        });
+        movie.save(function (err) {
+            done();
         });
     });
     afterEach(function(done){
@@ -28,29 +40,17 @@ describe('Movie API', function (){
         done();
     });
     describe("GET functions",function () {
-        beforeEach(function (done) {
-            var movie = new Movie({
-                name: "made",
-                movietype: 'Comedy',
-                Directedby: "Zhen me Liu",
-                mainActor: "Xing me",
-                upvotes: 2
-            });
-            movie.save(function (err) {
-                done();
-            });
-        });
         describe('GET /movies',  function() {
-            it('should return all the movies in an array ordered by upvotes', function (done) {
-                chai.request(server)
-                    .get('/movies')
-                    .end((err, res) => {
-                        expect(res).to.have.status(200);
-                        expect(res.body).to.be.a('array');
-                        expect(res.body.length).to.equal(2);
-                        done();
-                    });
-            });
+                it('should return all the movies in an array ordered by upvotes', function (done) {
+                    chai.request(server)
+                        .get('/movies')
+                        .end((err, res) => {
+                            expect(res).to.have.status(200);
+                            expect(res.body).to.be.a('array');
+                            expect(res.body.length).to.equal(2);
+                            done();
+                        });
+                });
         });
         describe('GET /movies/actor/:mainActor', function () {
                 it('should return movies which has someone as actor ', function (done) {
