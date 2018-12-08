@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "mocha test/routes/comment-test.js --timeout 10000"
+    "test": "cross-env NODE_ENV=test mocha test/routes/user-test.js --timeout 100000",
+    "custom-build": "npx webpack --config build/webpack.custom.prod.config.js"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
@@ -23,6 +25,7 @@
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
     "chai-things": "^0.2.0",
+    "cross-env": "^5.2.0",
     "mocha": "^3.4.2"
   }
 }
