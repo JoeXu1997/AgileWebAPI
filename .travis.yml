@@ -2,3 +2,12 @@ dist: trusty
 language: node_js
 node_js:
 - stable
+branches:
+  only: development
+notifications:
+  email:
+    recipients:
+    - joexu1997@gmail.com      # change to your own address
+    - 1659439045@qq.com    # uae other (optional)
+    on_success: never        # default: change
+    on_failure: always       # default: always
