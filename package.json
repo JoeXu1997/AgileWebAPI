@@ -6,7 +6,10 @@
     "start": "node ./bin/www",
     "test": "cross-env NODE_ENV=test mocha test/routes/user-test.js --timeout 100000",
     "custom-build": "npx webpack --config build/webpack.custom.prod.config.js",
-    "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files"
+    "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
+    "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
+    "start": "npm-run-all test build server",
+    "clean": "rimraf ./lib && mkdir lib",
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
