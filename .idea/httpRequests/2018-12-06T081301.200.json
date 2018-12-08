@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c0982cdba5ebb33ef13b26c",
+    "name": "Dangal",
+    "movietype": "Sports",
+    "Directedby": "Nitesh Tiwari",
+    "mainActor": "Aamir Khan",
+    "__v": 0
+  }
+}

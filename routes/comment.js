@@ -3,8 +3,8 @@ let router = express.Router();
 let mongoose = require('mongoose');
 var Comment = require('../models/comment');
 var User = require('../models/users');
-//var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';    //normal
-var mongodbUri ='mongodb://joe:a123456@ds149593.mlab.com:49593/dbtest'   //used for test
+var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';    //normal
+//var mongodbUri ='mongodb://joe:a123456@ds149593.mlab.com:49593/dbtest'   //used for test
 mongoose.connect(mongodbUri);
 //mongoose.connect('mongodb://localhost:27017/moviedb');
 let db = mongoose.connection;

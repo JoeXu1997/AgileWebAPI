@@ -3,13 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "npm-run-all test build server",
     "test": "cross-env NODE_ENV=test mocha test/routes/user-test.js --timeout 100000",
+    "test:watch": "npm run test -- --watch",
     "custom-build": "npx webpack --config build/webpack.custom.prod.config.js",
     "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
     "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
-    "start": "npm-run-all test build server",
     "clean": "rimraf ./lib && mkdir lib",
+    "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
+    "lint": "esw  ./test ./routes ./models/ app.js",
+    "lint:watch": "npm run lint -- --watch"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
@@ -33,6 +36,10 @@
     "chai-http": "^2.0.1",
     "chai-things": "^0.2.0",
     "cross-env": "^5.2.0",
-    "mocha": "^3.4.2"
+    "eslint": "^5.10.0",
+    "eslint-plugin-json": "^1.3.2",
+    "eslint-watch": "^4.0.2",
+    "mocha": "^3.4.2",
+    "nodemon": "^1.18.7"
   }
 }

@@ -1,6 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var cors = require('cors');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -15,7 +16,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -28,6 +29,8 @@ app.use('/users', usersRouter);
 //router for movies
 //{"name":"Dangal", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan"}
 app.put('/movies/:id',movies.upvote);
+app.put('/movie/change/:id',movies.changeMovieInfo);
+app.get('/movie/:id',movies.getOneMovie);
 app.get('/movies',movies.rankformovies);
 app.delete('/movies/:id',movies.removeMovie)
 app.post('/movies',movies.addMovie);

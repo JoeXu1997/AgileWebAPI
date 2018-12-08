@@ -4,8 +4,8 @@ let mongoose = require('mongoose');
 var User = require('../models/users');
 var Movie = require('../models/movies')
 var flag  ;
-//var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';//normal db
-var mongodbUri ='mongodb://joe:a123456@ds149593.mlab.com:49593/dbtest'   //used for test
+var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';//normal db
+//var mongodbUri ='mongodb://joe:a123456@ds149593.mlab.com:49593/dbtest'   //used for test
 mongoose.connect(mongodbUri);
 //mongoose.connect('mongodb://localhost:27017/moviedb');
 let db = mongoose.connection;

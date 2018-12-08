@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c0982dfba5ebb33ef13b26e",
+    "name": "test2",
+    "movietype": "Sports",
+    "Directedby": "Nitesh Tiwari",
+    "mainActor": "Aamir Khan",
+    "__v": 0
+  }
+}

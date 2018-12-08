@@ -125,7 +125,7 @@ describe('Comments API', function (){
             });
         });
     })
-    describe('POST /comment', function () {
+    describe.only('POST /comment', function () {
         it('should return confirmation message and update database(add a new comment)', function(done) {
             let comment = {
                 username: 'xu' ,
@@ -151,6 +151,8 @@ describe('Comments API', function (){
                     expect(res.body[2].content).to.equal("new nice movie");
                     done();
                 })
+        })
+        afterEach(function (done) {
             chai.request(server)
                 .get('/usr/myself')
                 .send({"operator":"xu"})
@@ -186,7 +188,7 @@ describe('Comments API', function (){
                 })
         })
     });
-    describe.only('DELETE /comment/:id',() => {
+    describe('DELETE /comment/:id',() => {
         it('should return a message and delete a donation record', function (done) {
             chai.request(server)
                 .delete('/comment/'+commentid)
@@ -199,16 +201,5 @@ describe('Comments API', function (){
                     done();
                 });
         });
-        // afterEach(function (done) {
-        //     chai.request(server)
-        //         .get('/usr/myself')
-        //         .send({"operator":"xu"})
-        //         .end(function (err,res) {
-        //             expect(res.body.actions.comment.commentfor.length).to.equal(2);
-        //             expect(res.body.actions.comment.commentfor[0]).is.to.equal("Inception")
-        //             expect(res.body.actions.comment.content[0]).is.to.equal("Nice Movie")
-        //             done();
-        //         })
-        // })
     });
 });

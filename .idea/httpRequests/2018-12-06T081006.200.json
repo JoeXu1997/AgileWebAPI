@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c09821eba5ebb33ef13b266",
+    "name": "Roman Holiday",
+    "movietype": "Romance",
+    "Directedby": "William Wyler",
+    "mainActor": "Audrey Hepburn",
+    "__v": 0
+  }
+}

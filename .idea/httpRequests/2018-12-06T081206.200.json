@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c098296ba5ebb33ef13b26a",
+    "name": "Civilization",
+    "movietype": "Documentary",
+    "Directedby": "Ashley Gething",
+    "mainActor": "null",
+    "__v": 0
+  }
+}

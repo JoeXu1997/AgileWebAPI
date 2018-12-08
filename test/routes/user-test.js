@@ -57,7 +57,7 @@ describe('User API', function (){
                     .end((err, res) => {
                         expect(res).to.have.status(200);
                         expect(res.body).to.be.a('array');
-                        expect(res.body.length).to.equal(2);//according to collection comment
+                        expect(res.body.length).to.equal(2);
                         done();
                     });
             });
