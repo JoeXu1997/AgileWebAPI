@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm-run-all test build server",
-    "test": "cross-env NODE_ENV=test mocha test/routes/user-test.js --timeout 100000",
+    "test": "cross-env NODE_ENV=test mocha test/routes/user-test.js --timeout 10000",
     "test:watch": "npm run test -- --watch",
     "custom-build": "npx webpack --config build/webpack.custom.prod.config.js",
     "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
