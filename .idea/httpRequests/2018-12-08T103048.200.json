@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c0c461891f68b4d4f6b9767",
+    "name": "Despicable Me",
+    "movietype": "Children",
+    "Directedby": "Chris Renaud & Pierre Coffin",
+    "mainActor": "Steve Carell",
+    "__v": 0
+  }
+}

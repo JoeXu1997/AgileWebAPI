@@ -1,4 +1,4 @@
-dist: trusty
+    # default: alwaysdist: trusty
 language: node_js
 node_js:
 - stable
@@ -7,10 +7,11 @@ script:
 after_success:
 - npm run publish-coverage
 branches:
-  only: development
+  only: master
 notifications:
   email:
     recipients:
-    - joexu1997@gmail.com      # change to your own address
-    on_success: never        # default: change
-    on_failure: always       # default: always
+    - joexu1997@gmail.com
+    - joedream1997@egmail.com
+    on_success: never
+    on_failure: always

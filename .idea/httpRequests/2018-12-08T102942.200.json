@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c0c45d691f68b4d4f6b9763",
+    "name": "The Conjuring",
+    "movietype": "Horror",
+    "Directedby": "James Wan",
+    "mainActor": "Vera Ann Farmiga",
+    "__v": 0
+  }
+}

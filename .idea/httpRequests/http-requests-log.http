@@ -3,6 +3,116 @@ Accept: application/json
 Cache-Control: no-cache
 Content-Type: application/json
 
+{"name":"Dangal", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan"}
+
+<> 2018-12-08T103116.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Despicable Me", "movietype": "Children", "Directedby":"Chris Renaud & Pierre Coffin","mainActor":"Steve Carell"}
+
+<> 2018-12-08T103048.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"The Shining ", "movietype": "Horror", "Directedby":"Stanley Kubrick","mainActor":"Jack Nicholson"}
+
+<> 2018-12-08T103031.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Civilization", "movietype": "Documentary", "Directedby":"Ashley Gething","mainActor":"null"}
+
+<> 2018-12-08T103017.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"A Chinese Odyssey", "movietype": "Comedy", "Directedby":"ZhenWei Liu","mainActor":"XingChi Zhou"}
+
+<> 2018-12-08T103000.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"The Conjuring", "movietype": "Horror","Directedby":"James Wan", "mainActor":"Vera Ann Farmiga"}
+
+<> 2018-12-08T102942.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Mission:Impossible", "movietype": "Suspense", "Directedby":"Brian Russell De Palma","mainActor":"TomCruise"}
+
+<> 2018-12-08T102923.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Roman Holiday", "movietype": "Romance","Directedby":"William Wyler", "mainActor":"Audrey Hepburn"}
+
+<> 2018-12-08T102908.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{  "name":"Inception", "movietype": "ScienceFiction", "Directedby":"Christopher Nolan","mainActor":"Leonardo DiCaprio"}
+
+<> 2018-12-08T102846.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{ "name":"test2", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan"}
+
+<> 2018-12-08T102826.200.json
+
+###
+
+POST http://localhost:3000/addmoviestest
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
 { "name":"test2", "movietype": "Sports", "Directedby":"Nitesh Tiwari","mainActor":"Aamir Khan"}
 
 <> 2018-12-06T081319.200.json
@@ -429,116 +539,6 @@ Content-Type: application/json
 {"username":"test","password":"123","usertype":"admin"}
 
 <> 2018-11-02T080614.200.json
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"123asd"}
-
-<> 2018-11-02T080544.200.json
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"123asd"}
-
-<> 2018-11-02T080310.200.json
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"123asd"}
-
-<> 2018-11-02T080304.200.json
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"ason"}
-
-<> 2018-11-02T080239.200.json
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"ason"}
-
-<> 2018-11-02T080231.200.json
-
-###
-
-GET http://localhost:3000/usr/myself
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"common"}
-
-<> 2018-11-02T080213.200.json
-
-###
-
-GET http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"common"}
-
-<> 2018-11-02T080206.200.json
-
-###
-
-PUT http://localhost:3000/usr/pw
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"joe","password":"123","newpw":"common"}
-
-<> 2018-11-02T080152.200.json
-
-###
-
-POST http://localhost:3000/usr
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"username":"joe","password":"123","usertype":"common"}
-
-<> 2018-11-02T080134.200.json
-
-###
-
-GET http://localhost:3000/usr/upvote/Incept
-Accept: application/json
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"operator":"xu","votefor":"Inception"}
-
-<> 2018-11-02T044806.200.json
 
 ###
 

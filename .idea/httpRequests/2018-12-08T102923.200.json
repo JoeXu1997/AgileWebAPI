@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c0c45c291f68b4d4f6b9762",
+    "name": "Mission:Impossible",
+    "movietype": "Suspense",
+    "Directedby": "Brian Russell De Palma",
+    "mainActor": "TomCruise",
+    "__v": 0
+  }
+}

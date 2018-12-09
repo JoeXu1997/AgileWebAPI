@@ -2,7 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bf902da-17db-41be-b480-8df06a2c484d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T044806.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080134.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080152.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080206.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080213.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080231.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080239.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080304.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080310.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2018-11-02T080544.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/.nycrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,25 +107,25 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="2" />
-          <entry key="js" value="114" />
-          <entry key="json" value="65" />
-          <entry key="nycrc" value="3" />
-          <entry key="yml" value="37" />
+          <entry key="js" value="158" />
+          <entry key="json" value="98" />
+          <entry key="nycrc" value="7" />
+          <entry key="yml" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="65" />
-          <entry key="JavaScript" value="114" />
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="YAML" value="37" />
+          <entry key="JSON" value="98" />
+          <entry key="JavaScript" value="158" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="YAML" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="babelrc" value="1" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="1" />
+          <entry key="js" value="2" />
           <entry key="json" value="2" />
           <entry key="nycrc" value="2" />
           <entry key="yml" value="1" />
@@ -118,7 +134,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="1" />
+          <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="YAML" value="1" />
         </counts>
@@ -128,10 +144,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/movies.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/movies.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-701">
-              <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
+            <state relative-caret-position="28">
+              <caret line="128" column="6" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -139,8 +167,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+            <state relative-caret-position="75">
+              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -154,11 +182,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="180">
+              <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -190,11 +218,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.nycrc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="211">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -202,8 +230,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+            <state relative-caret-position="124">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -226,6 +254,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="dummy://restClient/response55.json" root0="SKIP_INSPECTION" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -242,16 +273,16 @@
         <option value="$PROJECT_DIR$/test/routes/user-test.js" />
         <option value="$PROJECT_DIR$/routes/comment.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/models/movies.js" />
         <option value="$PROJECT_DIR$/routes/movies.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/nodemon.json" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/movies.js" />
+        <option value="$PROJECT_DIR$/.nycrc" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/.nycrc" />
       </list>
     </option>
   </component>
@@ -307,17 +338,6 @@
               <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
               <item name="Movie" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Movie" type="462c0819:PsiDirectoryNode" />
-              <item name="coverage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Movie" type="462c0819:PsiDirectoryNode" />
-              <item name="coverage" type="462c0819:PsiDirectoryNode" />
-              <item name="lcov-report" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Movie" type="b2602c69:ProjectViewProjectNode" />
@@ -439,135 +459,7 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{ &quot;name&quot;:&quot;test2&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="addmoviestest" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="mainActor" />
-                <option name="value" value="TomCruise" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{ &quot;name&quot;:&quot;test&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="addmoviestest" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="mainActor" />
-                <option name="value" value="TomCruise" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{ &quot;name&quot;:&quot;Dangal&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
+          <option name="textToSend" value="{&quot;name&quot;:&quot;Dangal&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -632,6 +524,70 @@
           </option>
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&quot;name&quot;:&quot;Despicable Me&quot;, &quot;movietype&quot;: &quot;Children&quot;, &quot;Directedby&quot;:&quot;Chris Renaud &amp; Pierre Coffin&quot;,&quot;mainActor&quot;:&quot;Steve Carell&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="addmoviestest" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="mainActor" />
+                <option name="value" value="TomCruise" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;name&quot;:&quot;The Shining &quot;, &quot;movietype&quot;: &quot;Horror&quot;, &quot;Directedby&quot;:&quot;Stanley Kubrick&quot;,&quot;mainActor&quot;:&quot;Jack Nicholson&quot;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -952,6 +908,262 @@
           </option>
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&quot;name&quot;:&quot;Roman Holiday&quot;, &quot;movietype&quot;: &quot;Romance&quot;,&quot;Directedby&quot;:&quot;William Wyler&quot;, &quot;mainActor&quot;:&quot;Audrey Hepburn&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="addmoviestest" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="mainActor" />
+                <option name="value" value="TomCruise" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{  &quot;name&quot;:&quot;Inception&quot;, &quot;movietype&quot;: &quot;ScienceFiction&quot;, &quot;Directedby&quot;:&quot;Christopher Nolan&quot;,&quot;mainActor&quot;:&quot;Leonardo DiCaprio&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="addmoviestest" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="mainActor" />
+                <option name="value" value="TomCruise" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;name&quot;:&quot;test2&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="addmoviestest" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="mainActor" />
+                <option name="value" value="TomCruise" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;name&quot;:&quot;test&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="addmoviestest" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="mainActor" />
+                <option name="value" value="TomCruise" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="username" />
+                <option name="value" value="joe" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="moviename" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="name" />
+                <option name="value" value="Inception" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{ &quot;name&quot;:&quot;Dangal&quot;, &quot;movietype&quot;: &quot;Sports&quot;, &quot;Directedby&quot;:&quot;Nitesh Tiwari&quot;,&quot;mainActor&quot;:&quot;Aamir Khan&quot;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -3450,198 +3662,6 @@
           <option name="textToSend" value="{&quot;operator&quot;:&quot;xu&quot;,&quot;content&quot;:&quot;new content&quot;,&quot;commentfor&quot;:&quot;Inception&quot;} " />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="/usr" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="mainActor" />
-                <option name="value" value="TomCruise" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;operator&quot;:&quot;xu&quot;,&quot;content&quot;:&quot;new content&quot;,&quot;commentfor&quot;:&quot;Inception&quot;} " />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="/movies/" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="mainActor" />
-                <option name="value" value="TomCruise" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;operator&quot;:&quot;xu&quot;,&quot;content&quot;:&quot;new content&quot;,&quot;commentfor&quot;:&quot;Inception&quot;} " />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="DELETE" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="/movies/5bd32a51550c1d05341dd94d" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parameters">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="mainActor" />
-                <option name="value" value="TomCruise" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="username" />
-                <option name="value" value="joe" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="moviename" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="name" />
-                <option name="value" value="Inception" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;operator&quot;:&quot;xu&quot;,&quot;content&quot;:&quot;new content&quot;,&quot;commentfor&quot;:&quot;Inception&quot;} " />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -3714,12 +3734,12 @@
       <workItem from="1544126510077" duration="180000" />
       <workItem from="1544126788623" duration="1041000" />
       <workItem from="1544191486865" duration="1356000" />
-      <workItem from="1544217587592" duration="5997000" />
+      <workItem from="1544217587592" duration="12733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219893000" />
+    <option name="totallyTimeSpent" value="226629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3747,29 +3767,29 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3280116" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="REST Client" order="9" sideWeight="0.49964765" visible="true" weight="0.45507246" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32608697" />
+      <window_info anchor="bottom" id="REST Client" order="9" sideWeight="0.49964765" weight="0.45402297" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32471263" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003524" side_tool="true" weight="0.3889695" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7070064" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="npm" order="2" sideWeight="0.29299363" side_tool="true" weight="0.24947146" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3280116" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32327586" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39912918" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3280116" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="REST Client" order="9" sideWeight="0.49964765" visible="true" weight="0.45573294" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3280116" />
+      <window_info anchor="bottom" id="REST Client" order="9" sideWeight="0.49964765" visible="true" weight="0.45402297" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32471263" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5003524" side_tool="true" weight="0.3889695" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -3785,11 +3805,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/models/movies.js</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/routes/user-test.js</url>
           <line>16</line>
@@ -3940,31 +3955,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/movies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="111" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="40" column="52" selection-start-line="37" selection-start-column="7" selection-end-line="40" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/movies.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-701">
-          <caret line="64" column="49" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -3999,24 +3993,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/models/movies.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="70" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        <state relative-caret-position="75">
+          <caret line="16" column="86" selection-start-line="16" selection-start-column="86" selection-end-line="16" selection-end-column="86" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/routes/movies.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="28">
+          <caret line="128" column="6" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.nycrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="211">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,12 @@
+{
+  "message": "Movie Add Successful!",
+  "data": {
+    "upvotes": 0,
+    "_id": "5c0c45e891f68b4d4f6b9764",
+    "name": "A Chinese Odyssey",
+    "movietype": "Comedy",
+    "Directedby": "ZhenWei Liu",
+    "mainActor": "XingChi Zhou",
+    "__v": 0
+  }
+}
