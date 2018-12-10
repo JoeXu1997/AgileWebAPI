@@ -3,9 +3,17 @@ let router = express.Router();
 let mongoose = require('mongoose');
 var Comment = require('../models/comment');
 var User = require('../models/users');
-var mongodbUri ='mongodb://joe:a123456@ds149479.mlab.com:49479/moviedb';    //normal
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } },
+    user: 'JoeXu', pass: 'xuyue.is.me1314' };
+
+var mongodbUri = 'mongodb://joe:a123456@ds039768.mlab.com:39768/heroku_hqk5v3sf';
+var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+
+
+mongoose.connect(mongooseUri,options);
 //var mongodbUri ='mongodb://joe:a123456@ds149593.mlab.com:49593/dbtest'   //used for test
-mongoose.connect(mongodbUri);
+//mongoose.connect(mongodbUri);
 //mongoose.connect('mongodb://localhost:27017/moviedb');
 let db = mongoose.connection;
 db.on('error', function (err) {
