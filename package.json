@@ -10,7 +10,7 @@
     "publish-coverage": "nyc report --reporter=text-lcov | coveralls",
     "custom-build": "npx webpack --config build/webpack.custom.prod.config.js",
     "build": "babel ./ --out-dir lib/ --ignore ./node_modules,./.babelrc,./package.json,./package-lock.json,./test --copy-files",
-    "server": "cross-env NODE_ENV=dev PORT=3001 node lib/bin/www",
+    "server": "cross-env NODE_ENV=dev PORT=3000 node lib/bin/www",
     "clean": "rimraf ./lib && mkdir lib",
     "server:watch": "cross-env NODE_ENV=dev nodemon --exec babel-node bin/www",
     "lint": "esw  ./test ./routes ./models/ app.js",
